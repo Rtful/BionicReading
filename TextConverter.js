@@ -19,8 +19,10 @@
     // Start polling...
     checkReady(function($) {
         $(function() {
+            let fixation = 1
+            let saccade = 10
             function convertWord(text) {
-                let length = Math.ceil(text.length / 2);
+                let length = Math.ceil(text.length / 2 * fixation / 3);
                 let [highlightedPart, normalPart] = split(text, length)
                 highlightedPart = '<b>' + highlightedPart + '</b>'
                 return highlightedPart + normalPart;
